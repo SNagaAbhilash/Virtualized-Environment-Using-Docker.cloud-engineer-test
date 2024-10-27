@@ -62,8 +62,41 @@ Ensure your project directory contains the following structure to run the applic
 step3:Create the Dockerfile
 The Dockerfile defines the environment for your web application. Create a file named Dockerfile with the following content:
 
+FROM nginx
+: This line specifies the base image for the Docker container. We are using the nginx:alpine image, which is a lightweight version of Nginx built on Alpine Linux. This helps to reduce the overall size of the container, making it faster to build and deploy.
+
+             # Use the lightweight Nginx image based on Alpine Linux
+                FROM nginx:alpine
+
+MAINTAINER abhilash: This line indicates the maintainer of the Docker image. While this is not required, it is useful for documentation purposes, allowing others to know who to contact regarding the image.
+
+              # Maintainer information
+                 MAINTAINER abhilash
+
+WORKDIR /usr/share/nginx/html: This command sets the working directory inside the container to the Nginx HTML directory. All subsequent commands (like COPY) will use this directory as the current working directory, simplifying file management.
+
+                # working directory
+             WORKDIR /usr/share/nginx/html
+
+COPY index.html /usr/share/nginx/html/index.html: This command copies the index.html file from your local directory into the specified path in the container. This file will be served as the main webpage.
+COPY style.css /usr/share/nginx/html/style.css: This line copies the style.css file into the same directory, allowing us to apply styles to our HTML page.
+COPY script.js /usr/share/nginx/html/script.js: This line copies the script.js file, which will handle any JavaScript functionality or interactions on the webpage.
+
+             # Copy the static files into the container
+             COPY index.html /usr/share/nginx/html/index.html
+             COPY style.css /usr/share/nginx/html/style.css
+             COPY script.js /usr/share/nginx/html/script.js
+
+EXPOSE 80: This instruction informs Docker that the container will listen on port 80. While this does not actually publish the port, it serves as documentation and allows other tools to understand which ports are intended to be exposed.
+
+              # Expose the port that Nginx listens on
+                  EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]: This command runs Nginx when the container starts. The -g "daemon off;" option keeps Nginx running in the foreground, which is essential for Docker containers to keep running continuously. This ensures that the Nginx process does not exit after starting.
 
 
+               # Default command to run Nginx
+               CMD ["nginx", "-g", "daemon off;"]
 
 
 
