@@ -28,7 +28,7 @@ Deployment Steps:
 
 6.create vpc or you can use default vpc and subnets
 
-7.Configure security group: Add a rule to allow SSH (port 22) from your IP. Add a rule to allow traffic on the port your application will run (e.g., port 8080 for tomcat).
+7.Configure security group: Add a rule to allow SSH (port 22) from your IP and add 80 port number for nginx
 
 8.Review and launch the instance.
 
@@ -80,7 +80,7 @@ WORKDIR /usr/share/nginx/html: This command sets the working directory inside th
 
 COPY index.html /usr/share/nginx/html/index.html: This command copies the index.html file from your local directory into the specified path in the container. This file will be served as the main webpage.
 COPY style.css /usr/share/nginx/html/style.css: This line copies the style.css file into the same directory, allowing us to apply styles to our HTML page.
-COPY script.js /usr/share/nginx/html/script.js: This line copies the script.js file, which will handle any JavaScript functionality or interactions on the webpage.
+COPY script.js /usr/share/nginx/html/script.js: This line copies the script.js file, which will handle any JavaScript functionality on the webpage.
 
              # Copy the static files into the container
              COPY index.html /usr/share/nginx/html/index.html
