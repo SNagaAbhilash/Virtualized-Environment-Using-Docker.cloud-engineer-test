@@ -59,6 +59,10 @@ Ensure your project directory contains the following structure to run the applic
           ├── styles.css
           └── script.js
 
+step3:Create the Dockerfile
+The Dockerfile defines the environment for your web application. Create a file named Dockerfile with the following content:
+
+
 
 
 
