@@ -1,4 +1,4 @@
-Objective:  Set up a basic virtualized environment using open-source tools like Docker.
+2.Objective:  Set up a basic virtualized environment using open-source tools like Docker.
 --------------------------------------------------------------------------------------------------------
 INTRODUCTION:
 --------------------------------------------------------------------------------------------------
