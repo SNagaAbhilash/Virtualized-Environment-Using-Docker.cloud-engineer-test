@@ -53,11 +53,11 @@ Step 2: Directory Structure
 Ensure your project directory contains the following structure to run the application using nginx
 
 
-  nginx-app(directory)
-    ├── Dockerfile
-    ├── index.html
-    ├── styles.css
-    └── script.js
+         nginx-app(directory)
+          ├── Dockerfile
+          ├── index.html
+          ├── styles.css
+          └── script.js
 
 
 
