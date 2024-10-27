@@ -98,13 +98,46 @@ CMD ["nginx", "-g", "daemon off;"]: This command runs Nginx when the container s
                # Default command to run Nginx
                CMD ["nginx", "-g", "daemon off;"]
 
+step4: Create the HTML, CSS, and JavaScript Files
+
+  to create a basic application but functional we create by using htmm,css and java scipt in the same directory
 
 
+Step 5: Build the Docker Image
+In project directory run the following command to build the Docker image:
+
+               docker build -t nginx-app .
+
+step6:Run the Docker Container
+After the image is built, run the Docker container using:
+This command starts the container in detached mode (-d) and maps port 80 of the container to port 8080 on your host machine.
+
+               docker run -d -p 8080:80 nginx-app
+
+Step 7: Access the Web Application
+Open your web browser and go to http://localhost:8080. You should see your web application. 
+Click the "Click Me!" button to see the interaction.
+
+Step 8: Stopping the Container
+To stop the running container, find its ID:
+
+                docker ps
+                
+Then stop the container using:
+
+                docker stop <container_id>
+
+Step 9: Cleanup
+To remove the container and the image, run:
+
+                 docker rm <container_id>
+                 docker rmi my-web-app
 
 
+conclusion:
+-----------------------------------
 
-
-
-
+You have successfully set up a Dockerized web application using Nginx to serve static files. you can also expand the application by adding more features, styles, or JavaScript functionality!
+                
 
 
