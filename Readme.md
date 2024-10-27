@@ -40,6 +40,26 @@ open your instance and connect using SSH client:
 
        ssh -i "web.pem" ec2-user@ec2-3-27-90-92.ap-southeast-2.compute.amazonaws.com
 
+Getting Started
+-------------------------------------------------------------------------------------------------
+Follow these steps to create and run your Dockerized web application.
+
+step1: create a directory and change the directory
+
+   mkdir nginx-app
+    cd nginx-app
+   
+Step 2: Directory Structure
+Ensure your project directory contains the following structure to run the application using nginx
+
+
+  nginx-app(directory)
+    ├── Dockerfile
+    ├── index.html
+    ├── styles.css
+    └── script.js
+
+
 
 
 
